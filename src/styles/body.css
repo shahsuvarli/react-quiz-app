@@ -1,0 +1,35 @@
+.body {
+  display: flex;
+}
+
+.question-container,
+.question-table-container {
+  padding: 1% 3%;
+}
+
+.question-container {
+  flex: 2;
+}
+
+.question-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+}
+
+.question-table-container {
+  flex: 1;
+}
+
+.questions-id {
+}
+
+.option{
+    padding: 1% 3%;
+}
+
+.question-buttons{
+    display: flex;
+    justify-content: space-around;
+}

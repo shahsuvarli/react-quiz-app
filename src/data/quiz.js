@@ -1,5 +1,6 @@
-[
+export const quiz = [
   {
+    id: 1,
     questionText: "What is WordPress?",
     options: [
       {
@@ -21,6 +22,7 @@
     ],
   },
   {
+    id: 2,
     questionText:
       "How many user roles available in wordpress first installation?",
     options: [
@@ -43,6 +45,7 @@
     ],
   },
   {
+    id: 3,
     questionText: "What is XAMPP?",
     options: [
       {
@@ -65,6 +68,7 @@
     ],
   },
   {
+    id: 4,
     questionText: "What does it mean by a theme in wordpress?",
     options: [
       {
@@ -86,6 +90,7 @@
     ],
   },
   {
+    id: 5,
     questionText: "What is plugins?",
     options: [
       {
@@ -108,6 +113,7 @@
     ],
   },
   {
+    id: 6,
     questionText: "Author can _____________?",
     options: [
       {
@@ -129,6 +135,7 @@
     ],
   },
   {
+    id: 7,
     questionText: "Editor can ____________?",
     options: [
       {
@@ -150,6 +157,7 @@
     ],
   },
   {
+    id: 8,
     questionText: "What is permalink?",
     options: [
       {
@@ -171,6 +179,7 @@
     ],
   },
   {
+    id: 9,
     questionText: "Whose are the post category??",
     options: [
       {
@@ -192,6 +201,7 @@
     ],
   },
   {
+    id: 10,
     questionText: "WordPress can not make all kind of websites?",
     options: [
       {
@@ -214,6 +224,7 @@
   },
 
   {
+    id: 11,
     questionText: "What is theme option?",
     options: [
       {
@@ -236,6 +247,7 @@
   },
 
   {
+    id: 12,
     questionText: "What is blog post featured image?",
     options: [
       {
@@ -258,6 +270,7 @@
   },
 
   {
+    id: 13,
     questionText: "How many post category we can add in our website?",
     options: [
       {
@@ -280,6 +293,7 @@
   },
 
   {
+    id: 14,
     questionText:
       "Which user roles doesn't come with first wordpress installation??",
     options: [
@@ -303,6 +317,7 @@
   },
 
   {
+    id: 15,
     questionText:
       "Which user roles doesn't come with first wordpress installation??",
     options: [
@@ -326,6 +341,7 @@
   },
 
   {
+    id: 16,
     questionText: "Plugin stands for-",
     options: [
       {
@@ -348,6 +364,7 @@
   },
 
   {
+    id: 17,
     questionText: "Where we can put custom CSS in free theme?",
     options: [
       {
@@ -371,6 +388,7 @@
   },
 
   {
+    id: 18,
     questionText: "What is Elementor?",
     options: [
       {
@@ -392,6 +410,7 @@
     ],
   },
   {
+    id: 19,
     questionText: "What is protected post?",
     options: [
       {
@@ -414,6 +433,7 @@
   },
 
   {
+    id: 20,
     questionText: "Can we set a time and date for publishing post?",
     options: [
       {
