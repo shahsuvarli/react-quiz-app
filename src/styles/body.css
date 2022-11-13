@@ -9,6 +9,10 @@
 
 .question-container {
   flex: 2;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  flex-direction: column;
 }
 
 .question-content {

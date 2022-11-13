@@ -14,7 +14,7 @@ function App() {
       value={{ question, setQuestion, questions, setQuestions }}
     >
       <div className="App">
-        <header className="App-header">Exam</header>
+        <header className="App-header">İmtahan</header>
         <Body />
       </div>
     </QuestionContext.Provider>

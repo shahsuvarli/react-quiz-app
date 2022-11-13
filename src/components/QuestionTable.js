@@ -10,11 +10,15 @@ function QuestionTable() {
 
   return (
     <div className="question-table-container">
-      <h2>QuestionTable</h2>
+      <h2>Sual siyahısı</h2>
       <div className="questions-id">
         {questions.map((item) => {
           return (
-            <Button onClick={() => selectQuestion(item)} key={item.id}>
+            <Button
+              onClick={() => selectQuestion(item)}
+              key={item.id}
+              disabled={item.isSubmitted}
+            >
               {item.id}
             </Button>
           );

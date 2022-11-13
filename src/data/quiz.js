@@ -20,6 +20,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 3,
@@ -66,6 +68,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 4,
@@ -88,6 +91,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 5,
@@ -111,6 +115,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 6,
@@ -133,6 +138,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 7,
@@ -155,6 +161,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 8,
@@ -177,6 +184,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 9,
@@ -199,6 +207,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 10,
@@ -221,6 +230,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -244,6 +254,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -267,6 +278,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -290,6 +302,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -314,6 +327,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -338,6 +352,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -361,6 +376,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -385,6 +401,7 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -408,6 +425,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
   {
     id: 19,
@@ -430,6 +448,7 @@ export const quiz = [
         isCorrect: false,
       },
     ],
+    isSubmitted: false,
   },
 
   {
@@ -453,5 +472,6 @@ export const quiz = [
         isCorrect: true,
       },
     ],
+    isSubmitted: false,
   },
 ];
