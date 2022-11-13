@@ -15,11 +15,15 @@
   flex-direction: column;
 }
 
-.question-content {
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  min-height: 300px;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  height: 300px;
 }
 
 .question-table-container {
@@ -29,11 +33,11 @@
 .questions-id {
 }
 
-.option{
-    padding: 1% 3%;
+.option {
+  padding: 1% 3%;
 }
 
-.question-buttons{
-    display: flex;
-    justify-content: space-around;
+.question-buttons {
+  display: flex;
+  justify-content: space-around;
 }

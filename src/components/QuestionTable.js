@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { QuestionContext } from "../App";
 
 function QuestionTable() {
-  const { setQuestion, questions } = useContext(QuestionContext);
+  const { setQuestion, questions, status } = useContext(QuestionContext);
   const selectQuestion = (item) => {
     setQuestion(item);
   };
@@ -11,13 +11,14 @@ function QuestionTable() {
   return (
     <div className="question-table-container">
       <h2>Sual siyahısı</h2>
-      <div className="questions-id">
+      <div className="questions-id" disabled>
         {questions.map((item) => {
           return (
             <Button
+              variant="contained"
               onClick={() => selectQuestion(item)}
               key={item.id}
-              disabled={item.isSubmitted}
+              disabled={status !== "started" ? true : item.isSubmitted}
             >
               {item.id}
             </Button>

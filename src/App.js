@@ -8,10 +8,11 @@ export const QuestionContext = createContext();
 function App() {
   const [question, setQuestion] = useState(0);
   const [questions, setQuestions] = useState(quiz);
+  const [status, setStatus] = useState("not started");
 
   return (
     <QuestionContext.Provider
-      value={{ question, setQuestion, questions, setQuestions }}
+      value={{ question, setQuestion, questions, setQuestions, status,setStatus }}
     >
       <div className="App">
         <header className="App-header">İmtahan</header>

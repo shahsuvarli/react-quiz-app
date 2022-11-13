@@ -312,7 +312,7 @@ export const quiz = [
     options: [
       {
         option: "Super Admin",
-        isCorrect: true,
+        isCorrect: false,
       },
       {
         option: "Editor",
@@ -333,18 +333,18 @@ export const quiz = [
   {
     id: 15,
     questionText:
-      "Which user roles doesn't come with first wordpress installation??",
+      "Which user roles doesn't come with first wordpress installation?",
     options: [
       {
         option: "Super Admin",
-        isCorrect: true,
-      },
-      {
-        option: "Editor",
         isCorrect: false,
       },
       {
         option: "Author",
+        isCorrect: false,
+      },
+      {
+        option: "Editor",
         isCorrect: false,
       },
       {

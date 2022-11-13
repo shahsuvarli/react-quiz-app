@@ -13,18 +13,36 @@ import SendIcon from "@mui/icons-material/Send";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 function Question() {
-  const { question, setQuestion, questions } = useContext(QuestionContext);
+  const { question, setQuestion, questions, setStatus, status } =
+    useContext(QuestionContext);
   const [selected, setSelected] = useState("");
   const [error, setError] = useState(false);
+
+  let nextObjectIndex;
+
+  const handleStartButton = () => {
+    setStatus("started");
+    setQuestion(questions[0]);
+  };
 
   const handleNextQuestion = () => {
     let availableQuestions = questions.filter(
       (item) => item.isSubmitted === false
     );
+
     const currentObject = availableQuestions.find(
       (item) => item.id === question.id
     );
-    const nextObjectIndex = availableQuestions.indexOf(currentObject) + 1;
+
+    if (
+      availableQuestions.indexOf(currentObject) ===
+      availableQuestions.length - 1
+    ) {
+      nextObjectIndex = 0;
+    } else {
+      nextObjectIndex = availableQuestions.indexOf(currentObject) + 1;
+    }
+
     const nextQuestion = availableQuestions.find(
       (item, index) => index === nextObjectIndex
     );
@@ -42,6 +60,7 @@ function Question() {
     if (selected) {
       setSelected("");
       handleNextQuestion();
+      console.log("first");
       question.isSubmitted = true;
     } else {
       setError(true);
@@ -50,12 +69,11 @@ function Question() {
 
   return (
     <div className="question-container">
-      {question ? (
+      {status === "started" ? (
         <>
           <h2>Sual {question.id}</h2>
-          <div className="question-content">
-            <form onSubmit={handleSubmitAnswer}>
-              <FormControl error={error}>
+            <form onSubmit={handleSubmitAnswer} className='form'>
+              <FormControl error={error} className='form-control'>
                 <FormLabel>
                   {question.id}. {question.questionText}
                 </FormLabel>
@@ -97,11 +115,14 @@ function Question() {
                 </div>
               </FormControl>
             </form>
-          </div>
         </>
-      ) : (
-        <Button variant="contained" onClick={() => setQuestion(questions[0])}>
+      ) : status === "not started" ? (
+        <Button variant="contained" onClick={handleStartButton}>
           START
+        </Button>
+      ) : (
+        <Button variant="contained" onClick={handleStartButton} disabled>
+          completed
         </Button>
       )}
     </div>
