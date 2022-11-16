@@ -32,10 +32,13 @@ function Question() {
   let nextObjectIndex;
 
   const IsCorrect = (question, selected) => {
-    question.options.map((item) =>
-      item.isCorrect && item.option === selected
-        ? setCorrect(correct + 1)
-        : setCorrect(correct)
+    question.options.map(
+      (item) =>
+        item.isCorrect && item.option === selected
+          ? console.log("correct")
+          : console.log("wrong")
+      // ? setCorrect(correct + 1)
+      // : setCorrect(correct)
     );
   };
 
@@ -95,7 +98,6 @@ function Question() {
               <FormLabel>
                 {question.id}. {question.questionText}
               </FormLabel>
-
               <RadioGroup name={toString(question.id)}>
                 {question.options.map((option) => {
                   return (
@@ -112,7 +114,6 @@ function Question() {
               {error && (
                 <Alert severity="warning">Zəhmət olmasa variant seçin</Alert>
               )}
-
               <div className="question-buttons">
                 <Button
                   variant="outlined"
@@ -121,14 +122,14 @@ function Question() {
                     handleNextQuestion(question.id);
                   }}
                 >
-                  davam et
+                  növbəti
                 </Button>
                 <Button
                   variant="contained"
                   endIcon={<SendIcon />}
                   type="submit"
                 >
-                  tesdiq et
+                  təsdiq et
                 </Button>
               </div>
             </FormControl>

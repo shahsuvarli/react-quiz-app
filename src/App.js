@@ -2,6 +2,7 @@ import "./styles/App.css";
 import Body from "./components/Body";
 import { createContext, useState } from "react";
 import { quiz } from "./data/quiz.js";
+import Answers from "./components/Answers";
 
 export const QuestionContext = createContext();
 
@@ -27,6 +28,7 @@ function App() {
       <div className="App">
         <header className="App-header">İmtahan ({correct})</header>
         <Body />
+        {status === "completed" && <Answers />}
       </div>
     </QuestionContext.Provider>
   );
