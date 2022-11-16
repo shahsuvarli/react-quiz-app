@@ -13,12 +13,31 @@ import SendIcon from "@mui/icons-material/Send";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 function Question() {
-  const { question, setQuestion, questions, setStatus, status } =
-    useContext(QuestionContext);
+  const {
+    question,
+    setQuestion,
+    questions,
+    setStatus,
+    status,
+    correct,
+    setCorrect,
+  } = useContext(QuestionContext);
   const [selected, setSelected] = useState("");
   const [error, setError] = useState(false);
 
+  let availableQuestions = questions.filter(
+    (item) => item.isSubmitted === false
+  );
+
   let nextObjectIndex;
+
+  const IsCorrect = (question, selected) => {
+    question.options.map((item) =>
+      item.isCorrect && item.option === selected
+        ? setCorrect(correct + 1)
+        : setCorrect(correct)
+    );
+  };
 
   const handleStartButton = () => {
     setStatus("started");
@@ -26,10 +45,6 @@ function Question() {
   };
 
   const handleNextQuestion = () => {
-    let availableQuestions = questions.filter(
-      (item) => item.isSubmitted === false
-    );
-
     const currentObject = availableQuestions.find(
       (item) => item.id === question.id
     );
@@ -57,11 +72,14 @@ function Question() {
 
   const handleSubmitAnswer = (event) => {
     event.preventDefault();
-    if (selected) {
+    if (selected && availableQuestions.length > 1) {
       setSelected("");
       handleNextQuestion();
-      console.log("first");
       question.isSubmitted = true;
+      IsCorrect(question, selected);
+    } else if (selected && !availableQuestions.length <= 1) {
+      setStatus("completed");
+      IsCorrect(question, selected);
     } else {
       setError(true);
     }
@@ -72,57 +90,57 @@ function Question() {
       {status === "started" ? (
         <>
           <h2>Sual {question.id}</h2>
-            <form onSubmit={handleSubmitAnswer} className='form'>
-              <FormControl error={error} className='form-control'>
-                <FormLabel>
-                  {question.id}. {question.questionText}
-                </FormLabel>
+          <form onSubmit={handleSubmitAnswer} className="form">
+            <FormControl error={error} className="form-control">
+              <FormLabel>
+                {question.id}. {question.questionText}
+              </FormLabel>
 
-                <RadioGroup name={toString(question.id)}>
-                  {question.options.map((option) => {
-                    return (
-                      <FormControlLabel
-                        value={option.option}
-                        control={<Radio />}
-                        label={option.option}
-                        key={option.option}
-                        onChange={handleRadioChange}
-                      />
-                    );
-                  })}
-                </RadioGroup>
-                {error && (
-                  <Alert severity="warning">Zəhmət olmasa variant seçin</Alert>
-                )}
+              <RadioGroup name={toString(question.id)}>
+                {question.options.map((option) => {
+                  return (
+                    <FormControlLabel
+                      value={option.option}
+                      control={<Radio />}
+                      label={option.option}
+                      key={option.option}
+                      onChange={handleRadioChange}
+                    />
+                  );
+                })}
+              </RadioGroup>
+              {error && (
+                <Alert severity="warning">Zəhmət olmasa variant seçin</Alert>
+              )}
 
-                <div className="question-buttons">
-                  <Button
-                    variant="outlined"
-                    endIcon={<NavigateNextIcon />}
-                    onClick={() => {
-                      handleNextQuestion(question.id);
-                    }}
-                  >
-                    davam et
-                  </Button>
-                  <Button
-                    variant="contained"
-                    endIcon={<SendIcon />}
-                    type="submit"
-                  >
-                    tesdiq et
-                  </Button>
-                </div>
-              </FormControl>
-            </form>
+              <div className="question-buttons">
+                <Button
+                  variant="outlined"
+                  endIcon={<NavigateNextIcon />}
+                  onClick={() => {
+                    handleNextQuestion(question.id);
+                  }}
+                >
+                  davam et
+                </Button>
+                <Button
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  type="submit"
+                >
+                  tesdiq et
+                </Button>
+              </div>
+            </FormControl>
+          </form>
         </>
       ) : status === "not started" ? (
         <Button variant="contained" onClick={handleStartButton}>
-          START
+          başla
         </Button>
       ) : (
         <Button variant="contained" onClick={handleStartButton} disabled>
-          completed
+          bitdi
         </Button>
       )}
     </div>
