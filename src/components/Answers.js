@@ -11,12 +11,12 @@ function Answers() {
             <p>{item.questionText}</p>
             {item.options.map((option) => {
               return (
-                <option
+                <p
                   key={option.option}
                   style={{ color: option.isCorrect ? "green" : "#000" }}
                 >
                   {option.option}
-                </option>
+                </p>
               );
             })}
             <hr />
