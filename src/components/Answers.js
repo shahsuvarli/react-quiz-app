@@ -13,7 +13,7 @@ function Answers() {
               return (
                 <option
                   key={option.option}
-                  style={{ color: option.isCorrect && "green" }}
+                  style={{ color: option.isCorrect ? "green" : "#000" }}
                 >
                   {option.option}
                 </option>
