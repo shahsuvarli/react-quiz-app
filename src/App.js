@@ -26,7 +26,7 @@ function App() {
       }}
     >
       <div className="App">
-        <header className="App-header">İmtahan ({correct})</header>
+        <header className="App-header">İmtahan nəticəsi ({correct})</header>
         <Body />
         {status === "completed" && <Answers />}
       </div>
