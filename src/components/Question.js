@@ -19,8 +19,6 @@ function Question() {
     questions,
     setStatus,
     status,
-    correct,
-    setCorrect,
     selected,
     setSelected,
   } = useContext(QuestionContext);
@@ -95,11 +93,12 @@ function Question() {
     <div className="question-container">
       {status === "started" ? (
         <>
-          <h2>Sual {question.id}</h2>
           <form onSubmit={handleSubmitAnswer} className="form">
             <FormControl error={error} className="form-control">
               <FormLabel>
-                {question.id}. {question.questionText}
+                <h4>
+                  {question.id}. {question.questionText}
+                </h4>
               </FormLabel>
               <RadioGroup name={toString(question.id)}>
                 {question.options.map((option) => {
@@ -143,7 +142,7 @@ function Question() {
           başla
         </Button>
       ) : (
-        <Button variant="contained" onClick={handleStartButton} disabled>
+        <Button variant="contained" disabled>
           bitdi
         </Button>
       )}
