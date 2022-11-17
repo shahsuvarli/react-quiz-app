@@ -4,18 +4,30 @@ import { QuestionContext } from "../App";
 function Answers() {
   const { questions } = useContext(QuestionContext);
   return (
-    <div>
+    <div className="answers-container">
       {questions.map((item) => {
         return (
           <div key={item.id}>
-            <p>{item.questionText}</p>
-            {item.options.map((option) => {
+            <p style={{ fontWeight: "bold" }}>{item.questionText}</p>
+            {item.options.map((option, index) => {
               return (
                 <p
                   key={option.option}
-                  style={{ color: option.isCorrect ? "green" : "#000" }}
+                  style={{
+                    color:
+                      option.isCorrect && option.myChoice
+                        ? "green"
+                        : !option.myChoice && option.isCorrect
+                        ? "blue"
+                        : !option.myChoice && !option.isCorrect
+                        ? "#000"
+                        : option.myChoice && !option.isCorrect
+                        ? "red"
+                        : "blue",
+                    marginLeft: 20,
+                  }}
                 >
-                  {option.option}
+                  {index + 1}){option.option}
                 </p>
               );
             })}

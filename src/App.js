@@ -11,6 +11,7 @@ function App() {
   const [questions, setQuestions] = useState(quiz);
   const [status, setStatus] = useState("not started");
   const [correct, setCorrect] = useState(0);
+  const [selected, setSelected] = useState("");
 
   return (
     <QuestionContext.Provider
@@ -23,12 +24,13 @@ function App() {
         setStatus,
         correct,
         setCorrect,
+        selected,
+        setSelected,
       }}
     >
       <div className="App">
-        <header className="App-header">İmtahan nəticəsi ({correct})</header>
-        <Body />
-        {status === "completed" && <Answers />}
+        <header className="App-header">İmtahan</header>
+        {status === "completed" ? <Answers /> : <Body />}
       </div>
     </QuestionContext.Provider>
   );

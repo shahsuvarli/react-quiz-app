@@ -21,8 +21,9 @@ function Question() {
     status,
     correct,
     setCorrect,
+    selected,
+    setSelected,
   } = useContext(QuestionContext);
-  const [selected, setSelected] = useState("");
   const [error, setError] = useState(false);
 
   let availableQuestions = questions.filter(
@@ -32,13 +33,10 @@ function Question() {
   let nextObjectIndex;
 
   const IsCorrect = (question, selected) => {
-    question.options.map(
-      (item) =>
-        item.isCorrect && item.option === selected
-          ? console.log("correct")
-          : console.log("wrong")
-      // ? setCorrect(correct + 1)
-      // : setCorrect(correct)
+    question.options.find((item) =>
+      item.option === selected
+        ? (item.myChoice = true)
+        : (item.myChoice = false)
     );
   };
 
@@ -77,13 +75,16 @@ function Question() {
     event.preventDefault();
     if (selected && availableQuestions.length > 1) {
       setSelected("");
+      question.selected = true;
       setTimeout(() => {
         handleNextQuestion();
       }, 1000);
       question.isSubmitted = true;
       IsCorrect(question, selected);
     } else if (selected && !availableQuestions.length <= 1) {
-      setStatus("completed");
+      setTimeout(() => {
+        setStatus("completed");
+      }, 1000);
       IsCorrect(question, selected);
     } else {
       setError(true);

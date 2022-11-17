@@ -1,5 +1,16 @@
+@media screen and (max-width: 600px) {
+  .body {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 400px;
+    gap: 50px;
+  }
+}
+
 .body {
   display: flex;
+  margin: 0 20px;
 }
 
 .question-container,
@@ -40,4 +51,8 @@ form {
 .question-buttons {
   display: flex;
   justify-content: space-around;
+}
+
+.answers-container{
+  margin: 0 20px;
 }
