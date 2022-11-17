@@ -77,7 +77,9 @@ function Question() {
     event.preventDefault();
     if (selected && availableQuestions.length > 1) {
       setSelected("");
-      handleNextQuestion();
+      setTimeout(() => {
+        handleNextQuestion();
+      }, 1000);
       question.isSubmitted = true;
       IsCorrect(question, selected);
     } else if (selected && !availableQuestions.length <= 1) {

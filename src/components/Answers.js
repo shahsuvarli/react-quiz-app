@@ -9,13 +9,13 @@ function Answers() {
         return (
           <div key={item.id}>
             <p>{item.questionText}</p>
-            {item.options.map((item) => {
+            {item.options.map((option) => {
               return (
                 <option
-                  key={item.option}
-                  style={{ color: item.isCorrect && "green" }}
+                  key={option.option}
+                  style={{ color: option.isCorrect && "green" }}
                 >
-                  {item.option}
+                  {option.option}
                 </option>
               );
             })}
