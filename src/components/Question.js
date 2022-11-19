@@ -83,6 +83,7 @@ function Question() {
       setTimeout(() => {
         setStatus("completed");
       }, 1000);
+      question.selected = true;
       IsCorrect(question, selected);
     } else {
       setError(true);
