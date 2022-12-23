@@ -1,38 +1,16 @@
 import "./styles/App.css";
 import Body from "./components/Body";
-import { createContext, useState } from "react";
-import { quiz } from "./data/quiz.js";
 import Answers from "./components/Answers";
-
-export const QuestionContext = createContext();
+import { useContext } from "react";
+import { QuestionContext } from "./provider/GlobalProvider";
 
 function App() {
-  const [question, setQuestion] = useState(0);
-  const [questions, setQuestions] = useState(quiz);
-  const [status, setStatus] = useState("not started");
-  const [correct, setCorrect] = useState(0);
-  const [selected, setSelected] = useState("");
-
+  const { status } = useContext(QuestionContext);
   return (
-    <QuestionContext.Provider
-      value={{
-        question,
-        setQuestion,
-        questions,
-        setQuestions,
-        status,
-        setStatus,
-        correct,
-        setCorrect,
-        selected,
-        setSelected,
-      }}
-    >
-      <div className="App">
-        <header className="App-header">İmtahan</header>
-        {status === "completed" ? <Answers /> : <Body />}
-      </div>
-    </QuestionContext.Provider>
+    <div className="App">
+      <header className="App-header">İmtahan</header>
+      {status === "completed" ? <Answers /> : <Body />}
+    </div>
   );
 }
 

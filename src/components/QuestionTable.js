@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useContext } from "react";
-import { QuestionContext } from "../App";
+import { QuestionContext } from "../provider/GlobalProvider";
 
 function QuestionTable() {
   const { setQuestion, questions, status } = useContext(QuestionContext);

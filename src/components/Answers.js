@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { QuestionContext } from "../App";
+import { QuestionContext } from "../provider/GlobalProvider";
 
 function Answers() {
   const { questions } = useContext(QuestionContext);

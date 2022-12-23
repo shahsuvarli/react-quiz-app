@@ -8,9 +8,9 @@ import {
   RadioGroup,
 } from "@mui/material";
 import React, { useContext, useState } from "react";
-import { QuestionContext } from "../App";
 import SendIcon from "@mui/icons-material/Send";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { QuestionContext } from "../provider/GlobalProvider";
 
 function Question() {
   const {
